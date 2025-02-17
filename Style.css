@@ -25,30 +25,62 @@ body{
 
 /* Search Box */
 .search {
+    width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: 10px;
+    justify-content: space-between;
 }
 
-.search input {
+
+.search input{
     width: 70%;
-    padding: 10px;
+    padding: 10px 25px;
     border: none;
     outline: none;
-    border-radius: 10px;
-    font-size: 16px;
+    background: #edfffc;
+    color: #555;
+    height: 60px;
+    margin-right: 16px;
+    border-radius: 30px;
+    font-size: 18px;
 }
-
 .search button {
     background: #fff;
     border: none;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
     cursor: pointer;
 }
 
 .search button img {
-    width: 20px;
+    width: 16px;
     height: 20px;
+}
+.Weather-icon{
+    width: 170px;
+    margin-top: 30px;
+    height: 170px;
+
+}
+
+.Weather h1{
+    font-size: 80px;
+    font-weight: 500;
+
+}
+.Weather h2{
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -10px;
+    
+}
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0, 20px;
+    margin-top: 50px ;
 }
