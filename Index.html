@@ -13,26 +13,66 @@
             <input type="text" placeholder="Enter city name" spellcheck="false">
             <button><img src="search.jpg" height="14px" width="14px"></button>
         </div>
-        <div class="Weather">
-            <img src="rain.png" class="Weather-icon">
-            <div class="temp">22°C</div>
+        <div class="weather">
+            <img src="rain.png" class="weather-icon">
+            <h1 class="temp">22°C</h1>
             <h2 class="city">New York</h2>
             <div class="details">
                 <div class="col">
-                    <img src="humidity.png" width="170px" height="170px">
+                    <img  src="humidity.png" ">
                     <div>
                         <p class="humidity">50%</p>
                         <p>humidity</p>
                     </div>
                 </div>
                 <div class="col">
-                    <img src="Wind.png" width="170px" height="170px">
+                    <img src="Wind.png" >
                     <div>
                         <p class="Wind">15 km/h</p>
                         <p>Wind speed</p>
             </div>
+       
+        </div>
+        <div class="space">
+        
         </div>
     </div>
+    
+
+    
+
+
+    <script>
+
+        const apikey = "d80a43f9d413f079c9732b3f1e860b65";
+        const apiURL = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+        
+        const searchBox=document.querySelector(".search input");
+        const searchBtn=document.querySelector(".search button");
+
+
+        
+        async function cheakWeather(city){
+            const responce= await fetch(apiURL +city+ `&appid=${apikey}`);
+            var data =await responce.json();
+
+            console.log(data);
+
+            document.querySelector(".city").innerHTML= data.name;
+            document.querySelector(".temp").innerHTML=Math.round(data.main.temp) +"°C";
+            document.querySelector(".humidity").innerHTML= data.main.humidity+"%";
+            document.querySelector(".Wind").innerHTML= data.wind.speed+"km/h";
+
+
+        }
+
+        searchBtn.addEventListener("click", ()=>{
+            cheakWeather(searchBox.value);
+        })
+
+        
+
+    </script>
 
 </body>
 </html>
